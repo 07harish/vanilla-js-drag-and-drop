@@ -1,27 +1,31 @@
+// const fill = document.querySelector('.fill');
 const empties = document.querySelectorAll('.tasks');
 
-const Addhere = document.getElementById('Addhere');
-
-// Fill listeners
+var fill;
 
 
 // Loop through empty boxes and add listeners
-for (const empty of empties) {
-    empty.addEventListener('dragover', dragOver);
-    empty.addEventListener('dragenter', dragEnter);
-    empty.addEventListener('dragleave', dragLeave);
-    empty.addEventListener('drop', dragDrop);
+for (const tasks of empties) {
+    tasks.addEventListener('dragover', dragOver);
+    tasks.addEventListener('dragenter', dragEnter);
+    tasks.addEventListener('dragleave', dragLeave);
+    tasks.addEventListener('drop', dragDrop);
 }
 
 // Drag Functions
+var getElement;
+function dragStart(e) {
+    console.log("osssasa", e)
+    getElement = document.getElementById(e.target.id)
 
-function dragStart() {
-    this.className += ' hold';
-    setTimeout(() => (this.className = 'invisible'), 0);
+    getElement.className += ' hold';
+    setTimeout(() => (getElement.className = 'invisible'), 0);
+    console.log("eeee", e.target.id)
 }
 
-function dragEnd() {
-    this.className = ' empty';
+function dragEnd(e) {
+    getElement.className = 'fill';
+    console.log("eeee", getElement, " xxxxxxx", e.target.id)
 }
 
 function dragOver(e) {
@@ -33,37 +37,33 @@ function dragEnter(e) {
     this.className += ' hovered';
 }
 
-function dragLeave() {
+function dragLeave(e) {
+
     this.className = 'tasks';
 }
+var newTextArea;
 
-function dragDrop() {
+function dragDrop(e) {
+    // console.log("get", e.target.id)
     this.className = 'tasks';
-    this.append(Addhere);
+    this.append(getElement);
 }
 
+// #######################################################################
+var count = 1;
+function addTask() {
+    var addTaskHere = document.getElementById("Addhere");
+    newTextArea = newTextArea + count;
+    newTextArea = document.createElement('textarea');
+    newTextArea.setAttribute('class', 'newTextArea fill');
+    newTextArea.setAttribute('id', count);
+    newTextArea.setAttribute('draggable', 'true')
 
-function Addtask() {
-
-    console.log("added")
-    var fragment = document.createDocumentFragment();
-    var newTextarea = document.createElement('textarea');
-    newTextarea.setAttribute('draggable', 'true');
-    newTextarea.setAttribute('class', 'inputTextArea fill');
-    newTextarea.setAttribute('rows', '3');
-
-
-    console.log("added", newTextarea)
-    // Addhere.textContent = newTextarea;
-
-    fragment.appendChild(newTextarea);
-
-    Addhere.appendChild(fragment);
-
-    setTimeout(() => {
-        const fill = document.querySelector('.inputTextArea');
-
-        fill.addEventListener('dragstart', dragStart);
-        fill.addEventListener('dragend', dragEnd);
-    }, 0)
+    newTextArea.addEventListener('dragstart', dragStart);
+    newTextArea.addEventListener('dragend', dragEnd);
+    count++;
+    console.log("fsdf", newTextArea);
+    var fragment = new DocumentFragment();
+    fragment.appendChild(newTextArea);
+    addTaskHere.appendChild(fragment);
 }

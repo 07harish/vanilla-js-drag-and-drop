@@ -16,11 +16,10 @@
     flex-direction: column;
     min-width: 200px;
     border: 1px solid grey;
+    overflow: hidden;
+    height: 520px;
 }
 
-.tasks{
- min-height: 200px;
-}
 
 .listHeader{
     display: flex;
@@ -41,35 +40,41 @@
 
 /* CSS */
 
+body {
+  /* background: darksalmon; */
+}
 
 .fill {
-    /* position: relative;
-    height: 150px;
-    width: 150px;
-    top: 5px;
-    left: 5px; */
-    cursor: pointer;
-  }
-  
-  .hold {
-    border: solid 5px rgb(255, 113, 113);
-  }
-  
-   .tasks{
-    /* display: inline-block;
-    height: 160px;
-    width: 160px;
-    margin: 10px; */
-    width: 100%;
-    /* min-height: 200px; */
-    display: flex;
-    flex-direction: column;
-    border: solid 3px salmon;
-    background: white;
-  }
-  
-  .hovered {
-    background: #f4f4f4;
-    border-style: dashed;
-  }
-  
+  /* background-image: url('https://source.unsplash.com/random/150x150'); */
+  position: relative;
+  /* height: 150px; */
+  /* width: 200px; */
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+  min-height: 100px;
+  max-height: 300px;
+}
+
+.hold {
+  border: solid 5px #ccc;
+}
+
+.newTextArea{
+  width: 400px;
+}
+
+.tasks {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 10px;
+  background: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.hovered {
+  background: #f4f4f4;
+  border-style: dashed;
+}
