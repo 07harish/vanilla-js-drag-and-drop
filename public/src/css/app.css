@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.todo-app{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 40px 20px;
+}
+
+.todoContainer{
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    border: 1px solid grey;
+}
+
+.tasks{
+ min-height: 200px;
+}
+
+.listHeader{
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    border-bottom: 2px solid grey;
+    padding: 10px;
+}
+.inputTextArea{
+    width: 100%;
+    border: 2px solid rgb(0, 217, 255);
+    min-height: 20px;
+}
+
+.Addhere{
+  min-height: 200px;
+}
+
+/* CSS */
+
+
+.fill {
+    /* position: relative;
+    height: 150px;
+    width: 150px;
+    top: 5px;
+    left: 5px; */
+    cursor: pointer;
+  }
+  
+  .hold {
+    border: solid 5px rgb(255, 113, 113);
+  }
+  
+   .tasks{
+    /* display: inline-block;
+    height: 160px;
+    width: 160px;
+    margin: 10px; */
+    width: 100%;
+    /* min-height: 200px; */
+    display: flex;
+    flex-direction: column;
+    border: solid 3px salmon;
+    background: white;
+  }
+  
+  .hovered {
+    background: #f4f4f4;
+    border-style: dashed;
+  }
+  

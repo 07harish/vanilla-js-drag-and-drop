@@ -1,0 +1,17 @@
+{
+  "name": "07harish-todo-pwa",
+  "version": "1.0.0",
+  "description": "Drag and drop todo PWA app for daily use!",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -c-1 -p 8082"
+  },
+  "keywords": [
+    "pwa"
+  ],
+  "author": "Harish Kulkarni (07harish)",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.12.0"
+  }
+}
