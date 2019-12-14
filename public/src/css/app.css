@@ -46,6 +46,7 @@
     background-color: #3f3f3f;
     color: rgb(255, 195, 195);
     font-weight: 600;
+    letter-spacing: 0.07em;
 }
 
 .listHeader:hover {
