@@ -54,10 +54,24 @@ var count = 1;
 function addTask() {
     var addTaskHere = document.getElementById("Addhere");
     newTextArea = newTextArea + count;
-    newTextArea = document.createElement('textarea');
+    newTextArea = document.createElement('div');
     newTextArea.setAttribute('class', 'newTextArea fill');
     newTextArea.setAttribute('id', count);
     newTextArea.setAttribute('draggable', 'true')
+
+    var Title = document.createElement('input');
+    Title.setAttribute('type', 'text');
+    Title.setAttribute('placeholder', 'Title');
+
+    var input = document.createElement('textArea');
+    input.setAttribute('placeholder', 'Describe');
+
+    var dragMe = document.createElement('div');
+    dragMe.setAttribute('class', 'dragMe');
+
+    newTextArea.appendChild(dragMe);
+    newTextArea.appendChild(Title);
+    newTextArea.appendChild(input);
 
     newTextArea.addEventListener('dragstart', dragStart);
     newTextArea.addEventListener('dragend', dragEnd);
