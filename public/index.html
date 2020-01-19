@@ -13,27 +13,38 @@
 </head>
 
 <body>
+
     <div class="todo-app">
-        <div class="todoContainer tasksListContainer">
-            <div class="listHeader">Tasks</div>
-            <div class="tasks">
-
-            </div>
+        <div class="Todo-actions">
+            <button class="addBtn Btn" onclick="addTask()">Add New Todo</button>
         </div>
-        <div class="todoContainer inProgressListContainer">
-            <div class="listHeader">In Progress</div>
-            <div class="tasks">
+        <div class="task-container">
+            <div class="todoContainer tasksListContainer">
+                <div class="listHeader">Tasks</div>
+                <div id="todoTasks" class="tasks">
 
+                </div>
             </div>
+            <div class="todoContainer inProgressListContainer">
+                <div class="listHeader">In Progress</div>
+                <div id="progressTasks" class="tasks">
+
+                </div>
+            </div>
+            <div class="todoContainer completedListContainer">
+                <div class="listHeader">Completed</div>
+                <div id="doneTasks" class="tasks">
+
+                </div>
+            </div>
+
         </div>
-        <div class="todoContainer completedListContainer">
-            <div class="listHeader">Completed</div>
-            <div class="tasks">
-
-            </div>
+        <div class="Todo-actions">
+            <button id="deleteBtn" class="Btn deleteBtn" onclick="deleteTask()">Delete</button>
         </div>
     </div>
-    <center><button class="addBtn" onclick="addTask()">Add New Todo</button>
+
+    <center>
         <div id="Addhere" class="Addhere"></div>
     </center>
 </body>
